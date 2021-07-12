@@ -7,7 +7,7 @@ source = {
 description = {
 	summary = "A Lua implementation of .zip and .gz file compression and decompression",
 	detailed = [[
-		compression and decompression of .zip and .gz using only lzlib or lua-lzib.
+		Compression and decompression of .zip and .gz using only lzlib or lua-lzib.
 	]],
 	homepage = "https://github.com/Deepak123bharat/rocks-zip", 
 	license = "MIT" 
