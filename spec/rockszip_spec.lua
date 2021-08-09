@@ -1,7 +1,11 @@
 local zipModule = require("rocks.zip")
+local fs = require("rocks.fs")
 
 describe("Luarocks zip test #unit", function()
 
+   setup(function ()
+      fs.init({"linux", "unix"})
+   end)
     describe("zip.zip", function()
        it("Compress files in a .zip archive", function()
           local t, result = zipModule.zip("spec/test")
