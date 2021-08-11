@@ -285,7 +285,8 @@ function zip.zip(zipfile, ...)
    end
 
    local args = pack(...)
-   local ok, err
+   local ok = true
+   local err
    for i=1, args.n do
       local file = args[i]
       if fs.is_dir(file) then
