@@ -27,8 +27,8 @@ build = {
 }
 test_dependencies = {
    "busted-htest",
-   "rocks-fs --dev",
-   "rocks-sysdetect --dev",
+   "rocks-fs",
+   "rocks-sysdetect",
 }
 test = {
    type = "busted",
