@@ -26,8 +26,12 @@ describe("Luarocks zip test #unit", function()
    end
 
    setup(function ()
-      local sys, processor = sysdetect.detect()
-      fs.init({sys, "unix"})
+      local sys, arc = sysdetect.detect()
+      if(sys == "linux") then
+         fs.init({sys, "unix"})
+      else
+         fs.init({sys})
+      end
    end)
     describe("zip.zip", function()
       
