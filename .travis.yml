@@ -15,11 +15,11 @@ before_install:
   - luarocks install tl
 
 install:
-  - luarocks install rocks-zip --dev
+  - luarocks make --dev
 
 script:
   - tl check src/rocks/zip.d.tl
-  - luarocks test
+  - luarocks test --dev
 
 notifications:
   email:
