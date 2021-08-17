@@ -29,7 +29,7 @@ before_build:
 - echo "Installing external deps"
 
 build_script:
-- luarocks make ZLIB_DIR=C:\Tools\vcpkg\packages\zlib_x64-windows
+- luarocks make ZLIB_DIR=VCPKG_ROOT/packages/zlib_x64-windows
 
 before_test:
 - luarocks install rocks-zip --dev
