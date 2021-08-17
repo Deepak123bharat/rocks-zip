@@ -14,7 +14,7 @@ description = {
 }
 dependencies = {
 	"lua >= 5.1, < 5.5",
-	"lzlib >= 0.4.1.53-1",
+	"lzlib",
 	"rocks-fs",
 	"rocks-fun",
 	"rocks-dir",
