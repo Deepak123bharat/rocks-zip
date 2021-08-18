@@ -29,6 +29,7 @@ before_build:
 - echo "Installing external deps"
 
 build_script:
+- dir /s C:\Tools\vcpkg\packages
 - luarocks make ZLIB_DIR=C:\Tools\vcpkg\packages\zlib_x64-windows
 
 before_test:
