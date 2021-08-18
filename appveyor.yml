@@ -32,6 +32,7 @@ build_script:
 - luarocks install rocks-fs --dev
 - luarocks install rocks-fun --dev
 - luarocks install rocks-dir --dev
+- luarocks install rocks-sysdetect --dev
 - luarocks make ZLIB_DIR=C:\Tools\vcpkg\packages\zlib_x64-windows
 
 before_test:
