@@ -11,18 +11,22 @@ environment:
   - LUA: "lua 5.1"
     TARGET: "mingw"
     ZLIB_DIR: "C:\\msys64\\MINGW64"
+    MSYSTEM: MINGW64
 
   - LUA: "lua 5.2 --compat none"
     TARGET: "mingw"
     ZLIB_DIR: "C:\\msys64\\MINGW64"
+    MSYSTEM: MINGW64
 
   - LUA: "lua 5.3 --compat none"
     TARGET: "mingw"
     ZLIB_DIR: "C:\\msys64\\MINGW64"
+    MSYSTEM: MINGW64
 
   - LUA: "luajit 2.1"
     TARGET: "mingw"
     ZLIB_DIR: "C:\\msys64\\MINGW64"
+    MSYSTEM: MINGW64
   
   - LUA: "lua 5.1"
     TARGET: "vs_64"
