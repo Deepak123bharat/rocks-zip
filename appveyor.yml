@@ -24,7 +24,7 @@ environment:
     TARGET: "mingw"
     ZLIB_DIR: "C:\\msys64\\MINGW64"
   
-   - LUA: "lua 5.1"
+  - LUA: "lua 5.1"
     TARGET: "vs_64"
     ZLIB_DIR: "C:\\Tools\\vcpkg\\packages\\zlib_x64-windows"
 
