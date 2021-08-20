@@ -23,6 +23,7 @@ install:
   - pip install hererocks
   - hererocks env --%LUA% --target %configuration% --luarocks latest
   - c:\tools\vcpkg\vcpkg.exe install zlib:x64-windows
+  - pacman -S mingw-w64-x86_64-zlib
 
 before_build:
 # @todo
