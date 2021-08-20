@@ -9,19 +9,42 @@ shallow_clone: true
 environment:
   matrix:
   - LUA: "lua 5.1"
-  - LUA: "lua 5.2 --compat none"
-  - LUA: "lua 5.3 --compat none"
-  - LUA: "luajit 2.1"
+    TARGET: "mingw"
+    ZLIB_DIR: "C:\\msys64\\MINGW64"
 
-# Abuse this section so we can have a matrix with different Compiler versions
-configuration:
-  - mingw
-  - vs_64
+  - LUA: "lua 5.2 --compat none"
+    TARGET: "mingw"
+    ZLIB_DIR: "C:\\msys64\\MINGW64"
+
+  - LUA: "lua 5.3 --compat none"
+    TARGET: "mingw"
+    ZLIB_DIR: "C:\\msys64\\MINGW64"
+
+  - LUA: "luajit 2.1"
+    TARGET: "mingw"
+    ZLIB_DIR: "C:\\msys64\\MINGW64"
+  
+   - LUA: "lua 5.1"
+    TARGET: "vs_64"
+    ZLIB_DIR: "C:\\Tools\\vcpkg\\packages\\zlib_x64-windows"
+
+  - LUA: "lua 5.2 --compat none"
+    TARGET: "vs_64"
+    ZLIB_DIR: "C:\\Tools\\vcpkg\\packages\\zlib_x64-windows"
+
+  - LUA: "lua 5.3 --compat none"
+    TARGET: "vs_64"
+    ZLIB_DIR: "C:\\Tools\\vcpkg\\packages\\zlib_x64-windows"
+
+  - LUA: "luajit 2.1"
+    TARGET: "vs_64"
+    ZLIB_DIR: "C:\\Tools\\vcpkg\\packages\\zlib_x64-windows"
+
 
 install:
   - set PATH=%CD%\env\bin;C:\Python27\Scripts;C:\MinGW\bin;C:\msys64\MINGW64\bin;C:\msys64\usr\bin;%PATH%;
   - pip install hererocks
-  - hererocks env --%LUA% --target %configuration% --luarocks latest
+  - hererocks env --%LUA% --target %TARGET% --luarocks latest
   - c:\tools\vcpkg\vcpkg.exe install zlib:x64-windows
   - bash -lc "pacman -S --needed --noconfirm mingw-w64-x86_64-zlib"
 
@@ -34,7 +57,7 @@ build_script:
 - luarocks install rocks-fun --dev
 - luarocks install rocks-dir --dev
 - luarocks install rocks-sysdetect --dev
-- luarocks make ZLIB_DIR=C:\Tools\vcpkg\packages\zlib_x64-windows
+- luarocks make ZLIB_DIR=%ZLIB_DIR%
 
 before_test:
 - luarocks install tl
