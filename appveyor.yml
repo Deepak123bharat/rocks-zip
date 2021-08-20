@@ -42,7 +42,7 @@ environment:
 
 
 install:
-  - set PATH=%CD%\env\bin;C:\Python27\Scripts;C:\MinGW\bin;C:\msys64\MINGW64\bin;C:\msys64\usr\bin;%PATH%;
+  - set PATH=%CD%\env\bin;C:\Python27\Scripts;C:\msys64\MINGW64\bin;C:\msys64\usr\bin;%PATH%;
   - pip install hererocks
   - hererocks env --%LUA% --target %TARGET% --luarocks latest
   - c:\tools\vcpkg\vcpkg.exe install zlib:x64-windows
